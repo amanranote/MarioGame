@@ -20,12 +20,5 @@ The game runs directly in the browser using the HTML5 Canvas API.
 1. Download or clone repo
 2. Open `index.html` in browser
 
-## 📌 Future Improvements
-- Add enemies
-- Add sound effects
-- Add levels
-- Mobile controls
 
----
 
-Made with ❤️ by Aman
