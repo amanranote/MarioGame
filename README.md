@@ -13,7 +13,7 @@ The game runs directly in the browser using the HTML5 Canvas API.
 ## 🛠 Tech Stack
 - HTML5
 - CSS3
-- JavaScript (Vanilla JS)
+- JavaScript 
 - Canvas API
 
 ## ▶️ How to Run
