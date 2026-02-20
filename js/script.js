@@ -36,7 +36,10 @@ playerStandLeft.src = "./images/spriteStandLeft.png";
 const playerRunRight = new Image();
 playerRunRight.src = "./images/spriteRunRight.png";
 
-let images = [backImage, hillsImage, plaformBase, plaformSmall,playerStandRight,playerRunRight,playerStandLeft];
+const playerRunLeft = new Image();
+playerRunLeft.src = "./images/spriteRunLeft.png";
+
+let images = [backImage, hillsImage, plaformBase, plaformSmall,playerStandRight,playerRunRight,playerStandLeft,playerRunLeft];
 const totalImages = images.length;
 let gameStart = false;
 let count = 0;
@@ -96,10 +99,10 @@ class Player {
     }
     update() {
         this.frames++;
-        if(this.frames>59 && this.image==playerStandRight)
+        if(this.frames>59 && (this.image==playerStandRight || this.image==playerStandLeft  ))
             this.frames=0
 
-        if(this.frames>29 && this.image==playerRunRight)
+        if(this.frames>29 && (this.image==playerRunRight || this.image==playerRunLeft))
             this.frames=0
 
         this.position.y += this.velocity.y;
@@ -217,14 +220,18 @@ function animate() {
 
 
     } else if(keys.left)
-    {    player.image=playerStandLeft;
-        player.cropWidth=177;
-        player.width=66;
+
+    {       
+            player.image=playerRunLeft;
+        player.cropWidth=340;
+        player.width=127;
     }
 
-
     else {
+        if(player.image==playerRunRight)
         player.image=playerStandRight;
+    else if(player.image==playerRunLeft)
+         player.image=playerStandLeft;
         player.cropWidth=177;
         player.width=66;
     }
